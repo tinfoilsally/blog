@@ -1,0 +1,35 @@
+
+<body>
+<div id="show">
+<p>
+    <strong>title:</strong>
+    <%= @article.title%>
+</p>
+<br>
+<p>
+    <strong>text:</strong>
+    <%= @article.text%>
+</p>
+<br>
+
+<h2>comments</h2>
+<%= render @article.comments %>
+
+<h2>add a comment:</h2>
+<%= render 'comments/form' %>
+
+<br>
+    <div style="float: left; width: 100;">
+        <%= button_to 'edit', edit_article_path(@article), :method => "get" %>
+    </div>
+    
+    <div style="float: left; width: 100;">
+        <%= button_to 'index', articles_path, :method => "get" %>
+    </div>
+    
+    <div style="float: left; width: 100;">
+        <%= button_to 'home', root_path, :method => "get" %>
+    </div>
+
+</div>
+</body>

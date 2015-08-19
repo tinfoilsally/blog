@@ -1,0 +1,33 @@
+
+<body>
+<div id="index">
+
+<h1>listing articles</h1>
+<br>
+<%= button_to 'new article', new_article_path, :method => "get" %>
+<br>
+<br>
+<br>
+<table style="table-layout:fixed;">
+    <tr>
+        <th>title</th>
+        <th>text</th>
+    </tr>
+    
+    <% @articles.each do |article| %>
+        <tr>
+            <td style="width: 100px; padding: 10px;"><%= article.title %></td>
+            <td style="width: 500px; padding: 10px;"><%= article.text %></td>
+            <td style="padding: 10px;"><%= link_to 'show', article_path(article) %></td>
+            <td style="padding: 10px;"><%= link_to 'edit', edit_article_path(article) %></td>
+            <td style="padding: 10px;"><%= link_to 'delete', article_path(article) %></td>
+        </tr>
+    <% end %>
+</table>
+<br>
+<br>
+
+<%= button_to 'home', root_path, :method => "get" %>
+
+</div>
+</body>
